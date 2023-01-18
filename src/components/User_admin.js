@@ -51,7 +51,9 @@ function User_admin() {
   // LOGOUT function
   async function Handlelogout() {
     const response = axios
-      .get(`${API}/user_logout`)
+      .get(`${API}/user_logout`, {
+        withCredentials: true,
+      })
       .then((res) => {
         console.log(response);
         window.location.href = "user-login";
@@ -278,7 +280,9 @@ function User_admin() {
                           <th className="px-4 py-2 border">Email</th>
                           <th className="px-4 py-2 border">Phone No.</th>
                           <th className="px-4 py-2 border">Message</th>
-                          <th className="px-4 py-2 border">Application Technology</th>
+                          <th className="px-4 py-2 border">
+                            Application Technology
+                          </th>
                           <th className="px-4 py-2 border">Application Type</th>
                           <th className="px-4 py-2 border">Pages</th>
                           <th className="px-4 py-2 border">Est. Cost</th>
